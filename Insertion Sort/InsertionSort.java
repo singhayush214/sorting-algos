@@ -1,18 +1,18 @@
-// Quick Understand --> https://www.youtube.com/watch?v=xli_FI7CuzA
+// Quick Understand --> https://www.youtube.com/watch?v=JU767SDMDvA
 
 /**
- * Complexity Analysis of Bubble Sort:
+ * Time Complexity of Insertion Sort 
  * 
- * Time Complexity: O(N2)
- * Auxiliary Space: O(1)
+ * The worst-case time complexity of the Insertion sort is O(N^2) 
+ * The average case time complexity of the Insertion sort is O(N^2)
+ * The time complexity of the best case is O(N).
  */
-
-class BubbleSort {
+public class InsertionSort {
     public static void main (String[] args) {
-        BubbleSort ob = new BubbleSort();
+        InsertionSort ob = new InsertionSort();
         int arr[] = {64,25,12,22,11};
         ob.sort(arr);
-        System.out.println("Sorted array using Bubble Sort");
+        System.out.println("Sorted array using Insertion Sort");
         ob.printArray(arr);
     }
     // Prints the array
@@ -32,18 +32,16 @@ class BubbleSort {
         a[indexOne] = a[indexTwo];
         a[indexTwo] = temp;
     }
+
     // [64,25,12,22,11]
     void sort(int arr[]) {
-        for(int i = 0; i < arr.length; i++) {
-            boolean swapped = false;
-            for(int j = 0; j < arr.length-1-i; j++) {
-                if (arr[j] > arr[j+1]) {
-                    BubbleSort.swapValuesAtIndexes(arr, j, j+1);
-                    swapped = true;
-                }
+        for (int i = 1 ; i < arr.length ; i++) {
+            int key = arr[i], j = i-1;
+            while(j >= 0 && arr[j] > key) {
+                arr[j+1] = arr[j];
+                j--;
             }
-
-            if(!swapped) break;
+            arr[j+1] = key;
         }
     }
 }

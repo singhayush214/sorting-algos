@@ -1,3 +1,5 @@
+// Quick Understand --> https://www.youtube.com/watch?v=g-PGLbMth_g
+
 /**
  * Complexity Analysis of Selection Sort 
  * Time Complexity: The time complexity of Selection Sort is O(N2) as there are two nested loops: 
@@ -10,7 +12,7 @@ class SelectionSort {
         SelectionSort ob = new SelectionSort();
         int arr[] = {64,25,12,22,11};
         ob.sort(arr);
-        System.out.println("Sorted array");
+        System.out.println("Sorted array using Selection Sort");
         ob.printArray(arr);
     }
 
